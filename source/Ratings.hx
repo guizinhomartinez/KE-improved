@@ -81,7 +81,9 @@ class Ratings
         }
 
         if (accuracy == 0)
-            ranking = "";
+            ranking = "FC";
+        if (accuracy <= 75)
+            ranking = "BAD";
 		else if(FlxG.save.data.botplay)
 			ranking = "BotPlay";
 
