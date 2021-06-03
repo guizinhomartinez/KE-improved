@@ -80,10 +80,12 @@ class Ratings
             }
         }
 
-        if (accuracy == 0)
+        if (PlayState.misses == 0 && accuracy == 0)
             ranking = "FC";
-        if (accuracy <= 75)
+        if (PlayState.misses >= 1 && accuracy <= 75)
             ranking = "BAD";
+        if (PlayState.misses == 0 && accuracy <= 96)    
+            ranking = "A";
 		else if(FlxG.save.data.botplay)
 			ranking = "BotPlay";
 
